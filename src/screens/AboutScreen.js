@@ -21,7 +21,7 @@ const AboutScreen = () => {
         <hr />
         <P>
           This website was first created in January 2021 by{' '}
-          <a href='https://github.com/lucabettini/bookish' className='link'>
+          <a href='https://lucabettini.github.io/' className='link'>
             Luca Bettini
           </a>{' '}
           as a personal project for the React module of{' '}
@@ -32,7 +32,7 @@ const AboutScreen = () => {
         </P>
         <P>
           Additional infos and the entire codebase are available{' '}
-          <a href='https://github.com/lucabettini' className='link'>
+          <a href='https://github.com/lucabettini/bookish' className='link'>
             here
           </a>
           .
