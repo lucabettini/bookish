@@ -46,6 +46,8 @@ export const fetchBooks = async (userInput) => {
 
     return parsedRes;
   } catch (err) {
+    localStorage.clear();
+    console.log(err);
     throw Error(err);
   }
 };

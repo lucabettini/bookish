@@ -26,6 +26,7 @@ const Searchbar = () => {
         dispatch({ type: SET_STATUS, payload: { status: 'succeeded' } });
       } catch (err) {
         dispatch({ type: SET_STATUS, payload: { status: 'failed' } });
+        dispatch({ type: GET_BOOKS, payload: { books: [] } });
       }
     }
     fetchData();
