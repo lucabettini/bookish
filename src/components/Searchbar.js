@@ -8,12 +8,12 @@ import { Form, FormControl, InputGroup, Button } from 'react-bootstrap';
 
 const Searchbar = () => {
   const [text, setText] = useState('');
-  const [query, setQuery] = useState(false);
+  const [query, setQuery] = useState(null);
   const dispatch = useDispatch();
   const history = useHistory();
 
   useEffect(() => {
-    if (query) {
+    if (typeof query === 'string') {
       // Redirect user to /books route (Header + ResultsScreen components)
       history.push('/books');
       // Dispatch async action to fetch data
