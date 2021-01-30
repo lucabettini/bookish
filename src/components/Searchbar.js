@@ -1,24 +1,34 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { useDispatch } from 'react-redux';
-import { fetchBooks } from '../redux/booksSlice';
+import booksContext from '../context/booksContext/booksContext';
+import { fetchBooks } from '../context/booksContext/actions';
+import { GET_BOOKS, SET_STATUS } from '../context/types';
 
 import { Form, FormControl, InputGroup, Button } from 'react-bootstrap';
 
 const Searchbar = () => {
   const [text, setText] = useState('');
   const [query, setQuery] = useState(false);
-  const dispatch = useDispatch();
+  const { dispatch } = useContext(booksContext);
   const history = useHistory();
 
   useEffect(() => {
-    if (query) {
-      // Redirect user to /books route (Header + ResultsScreen components)
-      history.push('/books');
-      // Dispatch async action to fetch data
-      dispatch(fetchBooks(query));
+    async function fetchData() {
+      if (query) {
+        // Redirect user to /books route (Header + ResultsScreen components)
+        history.push('/books');
+        dispatch({ type: SET_STATUS, payload: { status: 'loading' } });
+      }
+      try {
+        const res = await fetchBooks(query);
+        dispatch({ type: GET_BOOKS, payload: { books: res } });
+        dispatch({ type: SET_STATUS, payload: { status: 'succeeded' } });
+      } catch (err) {
+        dispatch({ type: SET_STATUS, payload: { status: 'failed' } });
+      }
     }
+    fetchData();
     // We can include the dispatch function in the dependecy array since it
     // remains constant by default
   }, [query, dispatch, history]);

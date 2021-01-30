@@ -1,7 +1,6 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useContext } from 'react';
 
-import { selectBooks, selectStatus } from '../redux/booksSlice';
+import booksContext from '../context/booksContext/booksContext';
 
 import Loader from '../components/Loader';
 import BooksGallery from '../components/BooksGallery';
@@ -14,8 +13,7 @@ import ErrorScreen from './ErrorScreen';
 // while the request is pending.
 
 const ResultScreen = () => {
-  const books = useSelector(selectBooks);
-  const status = useSelector(selectStatus);
+  const { books, status } = useContext(booksContext);
 
   if (status === 'init') {
     const savedBooksJSON = localStorage.getItem('books');

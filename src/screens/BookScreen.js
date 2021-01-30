@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { useSelector } from 'react-redux';
-import { selectBookById } from '../redux/booksSlice';
+import booksContext from '../context/booksContext/booksContext';
 
 import { Container, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
@@ -38,7 +37,8 @@ const Description = styled.p`
 
 const BookScreen = () => {
   const id = useParams().id;
-  const bookFromState = useSelector((state) => selectBookById(state, id));
+  const { books } = useContext(booksContext);
+  const bookFromState = books.filter((book) => book.id === id)[0];
 
   const getBook = () => {
     if (!bookFromState) {
