@@ -1,9 +1,11 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import styled from 'styled-components';
+
+import { useSelector } from 'react-redux';
 import { selectBookById } from '../redux/booksSlice';
+
+import { Container, Row, Col } from 'react-bootstrap';
+import styled from 'styled-components';
 
 const Cover = styled.img`
   width: 100%;

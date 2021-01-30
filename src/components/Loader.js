@@ -1,6 +1,8 @@
 import React from 'react';
+
 import { Container } from 'react-bootstrap';
 import styled from 'styled-components';
+
 import spinner from '../img/spinner.svg';
 
 const Spinner = styled.img`

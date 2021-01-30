@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link, HashRouter } from 'react-router-dom';
+
 import { Container, Row, Col } from 'react-bootstrap';
-import Searchbar from '../components/Searchbar';
 import styled from 'styled-components';
+
+import Searchbar from '../components/Searchbar';
 
 const Column = styled(Col)`
   display: flex;
@@ -46,7 +48,7 @@ const HomeScreen = () => {
           </Column>
         </Row>
         <Row>
-          <Col className='mx-auto'>
+          <Col>
             <Searchbar />
           </Col>
         </Row>

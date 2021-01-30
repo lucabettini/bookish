@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Container } from 'react-bootstrap';
 import styled from 'styled-components';
 
@@ -20,7 +21,7 @@ const AboutScreen = () => {
         <hr />
         <P>
           This website was first created in January 2021 by{' '}
-          <a href='https://lucabettini.github.io' className='link'>
+          <a href='https://github.com/lucabettini/bookish' className='link'>
             Luca Bettini
           </a>{' '}
           as a personal project for the React module of{' '}

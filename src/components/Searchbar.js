@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Form, FormControl, InputGroup, Button } from 'react-bootstrap';
+
 import { useDispatch } from 'react-redux';
 import { fetchBooks } from '../redux/booksSlice';
+
+import { Form, FormControl, InputGroup, Button } from 'react-bootstrap';
 
 const Searchbar = () => {
   const [text, setText] = useState('');
@@ -12,9 +14,13 @@ const Searchbar = () => {
 
   useEffect(() => {
     if (query) {
+      // Redirect user to /books route (Header + ResultsScreen components)
       history.push('/books');
+      // Dispatch async action to fetch data
       dispatch(fetchBooks(query));
     }
+    // We can include the dispatch function in the dependecy array since it
+    // remains constant by default
   }, [query, dispatch, history]);
 
   const onChange = (e) => {

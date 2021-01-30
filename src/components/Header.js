@@ -1,7 +1,9 @@
 import React from 'react';
+
 import { LinkContainer } from 'react-router-bootstrap';
 import { Container, Navbar } from 'react-bootstrap';
 import styled from 'styled-components';
+
 import Searchbar from './Searchbar';
 
 const Title = styled(Navbar.Brand)`
@@ -17,7 +19,7 @@ const NavigationBar = styled(Navbar)`
   justify-content: flex-start;
 `;
 
-const Header = ({ searchBooks }) => {
+const Header = () => {
   return (
     <Container
       className='background-white'
@@ -28,7 +30,7 @@ const Header = ({ searchBooks }) => {
           <LinkContainer to='/'>
             <Title className='small-title'>Bookish.</Title>
           </LinkContainer>
-          <Searchbar searchBooks={searchBooks} />
+          <Searchbar />
         </NavigationBar>
       </header>
     </Container>

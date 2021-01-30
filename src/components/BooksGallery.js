@@ -1,8 +1,15 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
 import Gallery from 'react-photo-gallery';
+import PropTypes from 'prop-types';
+
+import { Container } from 'react-bootstrap';
 
 import BookCover from '../components/BookCover';
+
+// react-photo-gallery needs an array of photo objects, each with its own source,
+// width and height. Here we create that array, passing the source of a black cover
+// if the original cover does not exists. This array is passed as a prop to the
+// <Gallery /> component below
 
 const createPhotos = (books) => {
   return books.map((book) => {
@@ -18,10 +25,11 @@ const createPhotos = (books) => {
 };
 
 const BooksGallery = ({ books }) => {
+  // We can change how each image looks like in the gallery by passing our own
+  // custom component in this function. In this case we give the component a
+  // margin and a book prop, with data on that particular book.
   const imageRenderer = ({ index, photo }) => (
     <BookCover
-      margin={'2px'}
-      index={index}
       photo={photo}
       book={books.filter((elem, elemIndex) => elemIndex === index)[0]}
       key={index}
@@ -38,3 +46,7 @@ const BooksGallery = ({ books }) => {
 };
 
 export default BooksGallery;
+
+BooksGallery.propTypes = {
+  books: PropTypes.array.isRequired,
+};

@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
+import PropTypes from 'prop-types';
+
 // STYLES VARIABLES
+// styled-components was causing problems for this particular component
 const content = {
   cursor: 'pointer',
   position: 'relative',
@@ -34,12 +37,14 @@ const contentDetailsTitle = {
   fontSize: '1.5em',
 };
 
-const BookCover = ({ photo, margin, book }) => {
+const BookCover = ({ photo, book }) => {
   const [isSelected, setIsSelected] = useState(false);
   const history = useHistory();
 
   const { id, title, author } = book;
 
+  // Simple function to display only a portion
+  // of the title if it's too long
   const changeTitle = (title) => {
     let titleWordsArray = title.split(' ');
     if (titleWordsArray.length > 5) {
@@ -50,13 +55,19 @@ const BookCover = ({ photo, margin, book }) => {
 
   const handleClick = (e) => {
     e.preventDefault();
+    // Redirect user to the specific book page when clicked
     history.push(`/books/${id}`);
   };
+
+  // When the user hovers on the component, the isSelected value changes to true
+  // and two transparents div, positioned in the same one of the image with
+  // position: absolute, are rendered opaque. This gives the image a grey
+  // background and displays the title and the author of the books
 
   return (
     <div
       style={{
-        margin,
+        margin: '2px',
         height: photo.height,
         width: photo.width,
         ...content,
@@ -92,3 +103,8 @@ const BookCover = ({ photo, margin, book }) => {
 };
 
 export default BookCover;
+
+BookCover.propTypes = {
+  books: PropTypes.object.isRequired,
+  photo: PropTypes.object.isRequired,
+};
