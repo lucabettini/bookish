@@ -105,6 +105,6 @@ const BookCover = ({ photo, book }) => {
 export default BookCover;
 
 BookCover.propTypes = {
-  books: PropTypes.object.isRequired,
+  book: PropTypes.object.isRequired,
   photo: PropTypes.object.isRequired,
 };
