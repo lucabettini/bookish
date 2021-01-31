@@ -21,7 +21,7 @@ The main branch, used in production, uses Redux as a state manager (configured w
 
 I used the [Google Books API](https://developers.google.com/books/) to get book's data, using the query provided by the user, and [react-photo-gallery](https://www.npmjs.com/package/react-photo-gallery) to make the gallery.
 
-The fetched data are saved both on the global state and on localStorage. This way, if the user refreshes the page, the website doesn't break. For additional infos see the [ResultsScreen](https://github.com/lucabettini/bookish/blob/main/src/screens/ResultScreen.js) file.
+I used HashRouter over BrowserRouter since there is no server-side; this allows the user to refresh the page (otherwise a 404 would be displayed if the user isn't in the homepage). Adding this refresh functionality needed another step: saving the fetched data on localStorage as well as on the global state, that is resetted in its initialState conditions after every refresh. For additional infos see the [ResultsScreen](https://github.com/lucabettini/bookish/blob/main/src/screens/ResultScreen.js) file.
 
 The useHistory hook (instead of Redirect from react-router-dom) was used to redirect between different screens, allowing an efficient use of the browser back button. This was not possible using Redirect, that is equivalent to the .replace method (and not .push) of useHistory.
 
