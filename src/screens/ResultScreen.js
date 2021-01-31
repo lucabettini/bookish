@@ -30,6 +30,7 @@ const ResultScreen = () => {
   } else if (status === 'succeeded') {
     return <BooksGallery books={books} />;
   } else if (status === 'failed') {
+    localStorage.clear();
     return <ErrorScreen />;
   }
 };
