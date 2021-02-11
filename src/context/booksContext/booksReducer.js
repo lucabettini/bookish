@@ -6,7 +6,6 @@ const booksReducer = (state, action) => {
       return {
         ...state,
         books: action.payload.books,
-        loading: false,
       };
     case SET_STATUS:
       return {
