@@ -1,6 +1,6 @@
 # [BOOKISH](https://book-ish.netlify.app)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a6d29760-ca0f-4a8a-8472-16dd54062a2c/deploy-status)](https://app.netlify.com/sites/book-ish/deploys)
+<i>Completed and deployed on Netlify on January 31, 2021 - new deploy on private server with minor revision on October 4, 2021</i>
 
 This website was created as a personal project while following the [Start2Impact](https://www.start2impact.it/) development course.  
 The requirements were:
@@ -17,13 +17,13 @@ The requirements were:
 
 This website is built entirely using the latest version React (17.0.1), with functional components and React Hooks instead of class component (a part from the Error Boundary component, that doesn't have an alternative with hooks).
 
-The main branch, used in production, uses Redux as a state manager (configured with redux-toolkit). An additional branch uses React built-in Context API as an alternative to Redux.
-
 I used the [Google Books API](https://developers.google.com/books/) to get book's data, using the query provided by the user, and [react-photo-gallery](https://www.npmjs.com/package/react-photo-gallery) to make the gallery.
 
-I used HashRouter over BrowserRouter since there is no server-side; this allows the user to refresh the page (otherwise a 404 would be displayed if the user isn't in the homepage). Adding this refresh functionality needed another step: saving the fetched data on localStorage as well as on the global state, that is resetted in its initialState conditions after every refresh. For additional infos see the [ResultsScreen](https://github.com/lucabettini/bookish/blob/main/src/screens/ResultScreen.js) file.
+The main branch, used in production, uses Redux as a state manager (configured with redux-toolkit). An additional branch uses React built-in Context API as an alternative to Redux.
 
-The useHistory hook (instead of Redirect from react-router-dom) was used to redirect between different screens, allowing an efficient use of the browser back button. This was not possible using Redirect, that is equivalent to the .replace method (and not .push) of useHistory.
+In order to persist the fetched data when the user refreshes the page, I saved them on localStorage as well. For additional infos see the [ResultsScreen](https://github.com/lucabettini/bookish/blob/main/src/screens/ResultScreen.js) file.
+
+The useHistory hook (instead of Redirect from react-router-dom) was used to redirect between different screens, allowing an efficient use of the browser back button.
 
 ## Layout
 

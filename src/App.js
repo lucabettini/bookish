@@ -1,4 +1,4 @@
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import './App.scss';
 
@@ -15,23 +15,25 @@ function App() {
     <ErrorBoundary>
       <div className='full-page background-img'>
         <Router>
-          <Route path='/' exact>
-            <HomeScreen />
-          </Route>
-          <Route path='/books' exact>
-            <Header />
-            <ResultScreen />
-          </Route>
-          <Route path='/books/:id' exact>
-            <Header />
-            <BookScreen />
-          </Route>
-          <Route path='/error' exact>
-            <ErrorScreen />
-          </Route>
-          <Route path='/about' exact>
-            <AboutScreen />
-          </Route>
+          <Switch>
+            <Route path='/' exact>
+              <HomeScreen />
+            </Route>
+            <Route path='/books' exact>
+              <Header />
+              <ResultScreen />
+            </Route>
+            <Route path='/books/:id' exact>
+              <Header />
+              <BookScreen />
+            </Route>
+            <Route path='/error' exact>
+              <ErrorScreen />
+            </Route>
+            <Route path='/about' exact>
+              <AboutScreen />
+            </Route>
+          </Switch>
         </Router>
       </div>
     </ErrorBoundary>
