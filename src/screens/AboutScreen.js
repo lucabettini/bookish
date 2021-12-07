@@ -21,18 +21,33 @@ const AboutScreen = () => {
         <hr />
         <P>
           This website was first created in January 2021 by{" "}
-          <a href="https://lucabettini.com" className="link">
+          <a
+            href="https://lucabettini.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link"
+          >
             Luca Bettini
           </a>{" "}
           as a personal project for the React course of{" "}
-          <a href="https://www.start2impact.it/" className="link">
+          <a
+            href="https://www.start2impact.it/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link"
+          >
             start2impact
           </a>
           .
         </P>
         <P>
           Additional infos and the entire code are available{" "}
-          <a href="https://github.com/lucabettini/bookish" className="link">
+          <a
+            href="https://github.com/lucabettini/bookish"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link"
+          >
             here
           </a>
           .
