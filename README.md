@@ -1,8 +1,9 @@
-# [BOOKISH](https://book-ish.netlify.app)
+# [BOOKISH](https://bookish.lucabettini.com)
 
 <i>Completed and deployed on Netlify on January 31, 2021 - new deploy on private server with minor revision on October 4, 2021</i>
 
-This website was created as a personal project while following the [Start2Impact](https://www.start2impact.it/) development course.  
+This website was created as a personal project while following the [Start2Impact](https://www.start2impact.it/) React & Redux course.
+
 The requirements were:
 
 - A searchbar to provide the query
