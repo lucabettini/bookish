@@ -1,8 +1,9 @@
-# [BOOKISH](https://book-ish.netlify.app)
+# [BOOKISH](https://bookish.lucabettini.com)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a6d29760-ca0f-4a8a-8472-16dd54062a2c/deploy-status)](https://app.netlify.com/sites/book-ish/deploys)
+<i>Completed and deployed on Netlify on January 31, 2021 - new deploy on private server with minor revision on October 4, 2021</i>
 
-This website was created as a personal project while following the [Start2Impact](https://www.start2impact.it/) development course.  
+This website was created as a personal project while following the [Start2Impact](https://www.start2impact.it/) React & Redux course.
+
 The requirements were:
 
 - A searchbar to provide the query
@@ -17,7 +18,7 @@ The requirements were:
 
 This website is built entirely using the latest version React (17.0.1), with functional components and React Hooks instead of class component (a part from the Error Boundary component, that doesn't have an alternative with hooks).
 
-The main branch, used in production, uses Redux as a state manager (configured with redux-toolkit). An additional branch uses React built-in Context API as an alternative to Redux.
+This branch uses React built-in Context API as global state-manager. The main branch, used in production, uses Redux (configured with redux-toolkit).
 
 I used the [Google Books API](https://developers.google.com/books/) to get book's data, using the query provided by the user, and [react-photo-gallery](https://www.npmjs.com/package/react-photo-gallery) to make the gallery.
 

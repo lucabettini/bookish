@@ -1,10 +1,10 @@
-import React from 'react';
-import { Link, HashRouter } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-import { Container, Row, Col } from 'react-bootstrap';
-import styled from 'styled-components';
+import { Container, Row, Col } from "react-bootstrap";
+import styled from "styled-components";
 
-import Searchbar from '../components/Searchbar';
+import Searchbar from "../components/Searchbar";
 
 const Column = styled(Col)`
   display: flex;
@@ -15,7 +15,7 @@ const Title = styled.h1`
   display: block;
   margin-top: 20vh;
   margin-bottom: 10vh;
-  font-family: 'Bree Serif', serif;
+  font-family: "Bree Serif", serif;
   font-size: 5em;
   color: #2a2b28;
   text-shadow: -1px 0 #ced4da, 0 1px #ced4da, 1px 0 #ced4da, 0 -1px #ced4da;
@@ -23,7 +23,7 @@ const Title = styled.h1`
 
 const About = styled.div`
   font-size: 1em;
-  font-family: 'Bree Serif', sans-serif;
+  font-family: "Bree Serif", sans-serif;
   color: #2a2b28;
 `;
 
@@ -41,7 +41,7 @@ const Footer = styled.div`
 const HomeScreen = () => {
   return (
     <>
-      <Container className='main-content fill'>
+      <Container className="main-content fill">
         <Row>
           <Column>
             <Title>Bookish.</Title>
@@ -54,13 +54,11 @@ const HomeScreen = () => {
         </Row>
       </Container>
       <Footer>
-        <HashRouter>
-          <Link to='/about'>
-            <About>
-              <span>About Bookish.</span>
-            </About>
-          </Link>
-        </HashRouter>
+        <Link to="/about">
+          <About>
+            <span>About Bookish.</span>
+          </About>
+        </Link>
       </Footer>
     </>
   );
