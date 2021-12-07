@@ -1,6 +1,8 @@
+![bookish homepage image](https://lucabettini.com/images/bookish_1.jpg)
+
 # [BOOKISH](https://bookish.lucabettini.com)
 
-<i>Completed and deployed on Netlify on January 31, 2021 - new deploy on private server with minor revision on October 4, 2021</i>
+<i>Completed and deployed on Netlify on January 31, 2021 - new deploy on DigitalOcean droplet with minor revision on October 4, 2021</i>
 
 This website was created as a personal project while following the [Start2Impact](https://www.start2impact.it/) React & Redux course.
 
